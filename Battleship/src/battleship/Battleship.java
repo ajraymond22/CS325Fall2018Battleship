@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.util.Scanner;
+
 /**
  *
  * @author redbi
@@ -45,6 +47,13 @@ public class Battleship extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("Can you hear me?");
+        Scanner x = new Scanner(System.in);
+        System.out.println(x.nextLine());
+        
+        ConsoleInteractor cliInterface
+                = new ConsoleInteractor(System.in, System.out);
+        System.out.println(cliInterface.promptCoordinate());
         launch(args);
     }
     
