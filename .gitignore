@@ -23,3 +23,8 @@
 hs_err_pid*
 /Battleship/dist/
 /Battleship/build/
+
+# Keep references to local directories (e.g., C: in Windows) out of the
+# repo.
+Battleship/nbproject/private/private.properties
+Battleship/nbproject/private/private.xml

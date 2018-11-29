@@ -10,8 +10,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Pos;
 
 import java.util.Scanner;
 
@@ -20,25 +24,40 @@ import java.util.Scanner;
  * @author redbi
  */
 public class Battleship extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
+
+        Label oceanGridLabel = new Label("Ocean Grid");
+        oceanGridLabel.setAlignment(Pos.CENTER);
+        oceanGridLabel.setStyle("-fx-pref-height: 10px");
+
+        Label targetGridLabel = new Label("Target Grid");
+        targetGridLabel.setAlignment(Pos.CENTER);
+        targetGridLabel.setStyle("-fx-pref-height: 10px");
+
+        GameBoard player1_ocean = new GameBoard("player");
+        GameBoard player1_target = new GameBoard("enemy");
+
+        GameBoard player2_ocean = new GameBoard("player");
+        GameBoard player2_target = new GameBoard("enemy");
+
+        VBox oceanBox = new VBox();
+        oceanBox.getChildren().add(oceanGridLabel);
+        oceanBox.getChildren().add(player1_ocean);
+
+        VBox targetBox = new VBox();
+        targetBox.getChildren().add(targetGridLabel);
+        targetBox.getChildren().add(player1_target);
+
+        HBox root = new HBox();
+        root.getChildren().add(oceanBox);
+
+        root.getChildren().add(targetBox);
+
+        Scene scene = new Scene(root, 480, 280);
+
+        primaryStage.setTitle("Battleship");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -47,14 +66,7 @@ public class Battleship extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Can you hear me?");
-        Scanner x = new Scanner(System.in);
-        System.out.println(x.nextLine());
-        
-        ConsoleInteractor cliInterface
-                = new ConsoleInteractor(System.in, System.out);
-        System.out.println(cliInterface.promptCoordinate());
         launch(args);
     }
-    
+
 }
