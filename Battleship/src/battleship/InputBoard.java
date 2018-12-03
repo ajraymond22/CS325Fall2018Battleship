@@ -25,8 +25,6 @@ import javafx.stage.Stage;
 public class InputBoard extends Application {
     
     Stage window;
-    Ship [] myships = new Ship[5];
-    Ship [] enemyShips = new Ship[5];
     // checking coordinates to see if they intersect
     
     public Boolean checkShipCoordinates(Ship [] ships) {

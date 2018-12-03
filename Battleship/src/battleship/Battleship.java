@@ -25,6 +25,8 @@ import java.util.Scanner;
  */
 public class Battleship extends Application {
 
+    public static Ship [] myships = new Ship[5];
+    public static Ship [] enemyShips = new Ship[5];
     public static int player1Hits = 0;
     public static int player2Hits = 0;
     @Override
