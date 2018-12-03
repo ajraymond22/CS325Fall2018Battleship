@@ -13,7 +13,6 @@ public class Ship {
     int length;
     Coordinate headCoordinate;
     Coordinate tailCoordinate;
-    String color;
     int hitCount = 0;
     
     
@@ -45,7 +44,4 @@ public class Ship {
         headCoordinate.xAxis = coordinate.xAxis;
     }
     
-    public void setColor(String color){
-        
-    }
 }
