@@ -28,7 +28,7 @@ public class GameBoard extends Parent {
     private static final int CELL_LENGTH = 20;
 
     private static final Color COLOR_OCEAN_UNOCCUPIED = Color.BLUE;
-    private static final Color COLOR_OCEAN_SHIP = Color.BLUE;
+    private static final Color COLOR_OCEAN_SHIP = Color.GRAY;
     private static final Color COLOR_OCEAN_HIT = Color.RED;
     private static final Color COLOR_OCEAN_SUNK = Color.MAROON;
 
