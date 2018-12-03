@@ -25,6 +25,8 @@ import java.util.Scanner;
  */
 public class Battleship extends Application {
 
+    public static int player1Hits = 0;
+    public static int player2Hits = 0;
     @Override
     public void start(Stage primaryStage) {
 
@@ -61,12 +63,23 @@ public class Battleship extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    
+    public static void detectWin(){
+        if (player1Hits == 14) {
+            //POPUP saying "PLAYER 1 WINS!"
+        }
+        else if (player2Hits == 14){
+            //POPUP saying "PLAYER 2 WINS!"
+        }
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
+        
+        
     }
 
 }

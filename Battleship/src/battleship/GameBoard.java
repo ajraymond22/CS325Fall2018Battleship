@@ -107,6 +107,9 @@ public class GameBoard extends Parent {
             return "enemy";
         }
     }
+    
+    
+    
     public class Cell extends Rectangle{
 
         public int horizontalPosition;
