@@ -10,14 +10,14 @@ package battleship;
  * @author matt
  */
 public class Coordinate {
-    String yAxis;
-    String xAxis;
+    int yAxis;
+    int xAxis;
     
-    public void setYAxis(String value){
+    public void setYAxis(int value){
         yAxis = value;
     }
     
-    public void setXAxis(String value){
+    public void setXAxis(int value){
         xAxis = value;
     }
 }
