@@ -13,6 +13,8 @@ public class Ship {
     int length;
     Coordinate headCoordinate;
     Coordinate tailCoordinate;
+    Coordinate [] body;
+    String orientation;
     int hitCount = 0;
     
     

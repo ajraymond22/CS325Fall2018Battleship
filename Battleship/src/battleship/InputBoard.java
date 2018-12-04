@@ -27,8 +27,6 @@ import javafx.stage.Stage;
 public class InputBoard extends Application {
     
     Stage window;
-    Ship [] myships = new Ship[5];
-    Ship [] enemyShips = new Ship[5];
     Coordinate [][] coordinates = new Coordinate[10][10];
     Boolean inBounds = true;
     Boolean formFilled = true;
