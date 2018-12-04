@@ -26,9 +26,9 @@ public class Ship {
         this.length = length;
     }
     
-//    public void setOrientation(String orientation){
-//        this.orientation = orientation;
-//    }
+    public void setOrientation(String orientation){
+        this.orientation = orientation;
+    }
     
     public void setHeadCoordinateCol(Coordinate coordinate){
         headCoordinate.xAxis = coordinate.xAxis;
