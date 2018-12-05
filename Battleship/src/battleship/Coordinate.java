@@ -12,8 +12,11 @@ package battleship;
 public class Coordinate {
     int yAxis;
     int xAxis;
-    Coordinate head;
-    Coordinate tail;
+   // Coordinate head;
+   // Coordinate tail;
+    Boolean filled = false;
+    
+
     
     // row
     public void setYAxis(int value){

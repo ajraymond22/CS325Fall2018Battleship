@@ -29,6 +29,7 @@ public class Battleship extends Application {
     public static Ship [] enemyShips = new Ship[5];
     public static int player1Hits = 0;
     public static int player2Hits = 0;
+    static Stage secondaryStage;
     @Override
     public void start(Stage primaryStage) {
 
@@ -63,6 +64,8 @@ public class Battleship extends Application {
 
         primaryStage.setTitle("Battleship");
         primaryStage.setScene(scene);
+        InputBoard i1 = new InputBoard();
+        i1.displayInputBoard(primaryStage); //throws Exception;
         primaryStage.show();
     }
     
@@ -79,7 +82,10 @@ public class Battleship extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // i1 = new InputBoard();
+        //i1.start(primaryStage);
         launch(args);
+        
         
         
     }

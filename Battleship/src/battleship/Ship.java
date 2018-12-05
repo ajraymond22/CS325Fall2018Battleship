@@ -17,6 +17,7 @@ public class Ship {
     String orientation;
     int hitCount = 0;
     
+
     
     public boolean isSunk(Ship ship){
         return ship.hitCount == ship.length;

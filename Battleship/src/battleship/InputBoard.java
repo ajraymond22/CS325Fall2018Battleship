@@ -24,9 +24,10 @@ import javafx.stage.Stage;
  */
 
 
-public class InputBoard extends Application {
+public class InputBoard {//extends Application {
     
-    Stage window;
+    //static Stage inputBoardStage;
+    Ship [] myships = new Ship[5];
     Coordinate [][] coordinates = new Coordinate[10][10];
     Boolean inBounds = true;
     Boolean formFilled = true;
@@ -124,15 +125,15 @@ public class InputBoard extends Application {
         return true;
     }
         
-    public static void main(String[] args) {
-        launch(args);
+//    public static void main(String[] args) {
+//        launch(args);
+//        
+//    }
+    //@Override
+    public void displayInputBoard(Stage primaryStage){ //throws Exception{
         
-    }
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        
-        window = primaryStage;
-        window.setTitle("SHIP PLACEMENT");
+        //Stage inputBoardStage = primaryStage;
+        primaryStage.setTitle("SHIP PLACEMENT");
         
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
@@ -145,14 +146,14 @@ public class InputBoard extends Application {
         
         TextField headInputRow1 = new TextField();
         headInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(headInputRow1, 0, 1);
+        GridPane.setConstraints(headInputRow1, 1, 0);
         
         TextField headInputCol1 = new TextField();
-        headInputRow1.setPromptText("Col 1-10");
-        GridPane.setConstraints(headInputCol1, 0, 2);
+        headInputCol1.setPromptText("Col 1-10");
+        GridPane.setConstraints(headInputCol1, 2, 0);
         
         Label tailLabel1 = new Label("Tail coordinate of Size 5 Ship");
-        GridPane.setConstraints(tailLabel1, 1, 0);
+        GridPane.setConstraints(tailLabel1, 0, 1);
         
         TextField tailInputRow1 = new TextField();
         tailInputRow1.setPromptText("Row A-J");
@@ -160,103 +161,103 @@ public class InputBoard extends Application {
         
         TextField tailInputCol1 = new TextField();
         tailInputCol1.setPromptText("Col 1-10");
-        GridPane.setConstraints(tailInputCol1, 1, 2);
+        GridPane.setConstraints(tailInputCol1, 2, 1);
         
         // Size 4 ship
         Label headLabel2 = new Label("Head coordinate of Size 4 Ship ");
-        GridPane.setConstraints(headLabel2, 2, 0);
+        GridPane.setConstraints(headLabel2, 0, 3);
         
         TextField headInputRow2 = new TextField();
         headInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(headInputRow2, 2, 1);
+        GridPane.setConstraints(headInputRow2, 1, 3);
         
         TextField headInputCol2 = new TextField();
         headInputRow1.setPromptText("Col 1-10");
-        GridPane.setConstraints(headInputCol2, 2, 2);
+        GridPane.setConstraints(headInputCol2, 2, 3);
         
-        Label tailLabel2 = new Label("Tail coordinate of Size 5 Ship");
-        GridPane.setConstraints(tailLabel2, 3, 0);
+        Label tailLabel2 = new Label("Tail coordinate of Size 4 Ship");
+        GridPane.setConstraints(tailLabel2, 0, 4);
         
         TextField tailInputRow2 = new TextField();
         tailInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(tailInputRow2, 3, 1);
+        GridPane.setConstraints(tailInputRow2, 1, 4);
         
         TextField tailInputCol2 = new TextField();
         tailInputCol1.setPromptText("Col 1-10");
-        GridPane.setConstraints(tailInputCol2, 3, 2);
+        GridPane.setConstraints(tailInputCol2, 2, 4);
         
         // Size 3 ship
-        Label headLabel3 = new Label("Head coordinate of Size 4 Ship ");
-        GridPane.setConstraints(headLabel3, 4, 0);
+        Label headLabel3 = new Label("Head coordinate of Size 3 Ship ");
+        GridPane.setConstraints(headLabel3, 0, 5);
         
         TextField headInputRow3 = new TextField();
         headInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(headInputRow3, 4, 1);
+        GridPane.setConstraints(headInputRow3, 1, 5);
         
         TextField headInputCol3 = new TextField();
         headInputRow1.setPromptText("Col 1-10");
-        GridPane.setConstraints(headInputCol3, 4, 2);
+        GridPane.setConstraints(headInputCol3, 2, 5);
         
-        Label tailLabel3 = new Label("Tail coordinate of Size 5 Ship");
-        GridPane.setConstraints(tailLabel3, 5, 0);
+        Label tailLabel3 = new Label("Tail coordinate of Size 3 Ship");
+        GridPane.setConstraints(tailLabel3, 0, 6);
         
         TextField tailInputRow3 = new TextField();
         tailInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(tailInputRow3, 5, 1);
+        GridPane.setConstraints(tailInputRow3, 1, 6);
         
         TextField tailInputCol3 = new TextField();
         tailInputCol1.setPromptText("Col 1-10");
-        GridPane.setConstraints(tailInputCol3, 5, 2);
+        GridPane.setConstraints(tailInputCol3, 2, 6);
         
         // Size 3 ship
-        Label headLabel4 = new Label("Head coordinate of Size 4 Ship ");
-        GridPane.setConstraints(headLabel4, 6, 0);
+        Label headLabel4 = new Label("Head coordinate of Size 3 Ship ");
+        GridPane.setConstraints(headLabel4, 0, 7);
         
         TextField headInputRow4 = new TextField();
         headInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(headInputRow4, 6, 1);
+        GridPane.setConstraints(headInputRow4, 1, 7);
         
         TextField headInputCol4 = new TextField();
         headInputRow1.setPromptText("Col 1-10");
-        GridPane.setConstraints(headInputCol4, 6, 2);
+        GridPane.setConstraints(headInputCol4, 2, 7);
         
-        Label tailLabel4 = new Label("Tail coordinate of Size 5 Ship");
-        GridPane.setConstraints(tailLabel4, 7, 0);
+        Label tailLabel4 = new Label("Tail coordinate of Size 3 Ship");
+        GridPane.setConstraints(tailLabel4, 0, 8);
         
         TextField tailInputRow4 = new TextField();
         tailInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(tailInputRow4, 7, 1);
+        GridPane.setConstraints(tailInputRow4, 1, 8);
         
         TextField tailInputCol4 = new TextField();
         tailInputCol1.setPromptText("Col 1-10");
-        GridPane.setConstraints(tailInputCol4, 7, 2);
+        GridPane.setConstraints(tailInputCol4, 2, 8);
         
         // Size 2 ship
-        Label headLabel5 = new Label("Head coordinate of Size 4 Ship ");
-        GridPane.setConstraints(headLabel5, 8, 0);
+        Label headLabel5 = new Label("Head coordinate of Size 2 Ship ");
+        GridPane.setConstraints(headLabel5, 0, 9);
         
         TextField headInputRow5 = new TextField();
         headInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(headInputRow5, 8, 1);
+        GridPane.setConstraints(headInputRow5, 1, 9);
         
         TextField headInputCol5 = new TextField();
         headInputRow1.setPromptText("Col 1-10");
-        GridPane.setConstraints(headInputCol5, 8, 2);
+        GridPane.setConstraints(headInputCol5, 2, 9);
         
-        Label tailLabel5 = new Label("Tail coordinate of Size 5 Ship");
-        GridPane.setConstraints(tailLabel5, 9, 0);
+        Label tailLabel5 = new Label("Tail coordinate of Size 2 Ship");
+        GridPane.setConstraints(tailLabel5, 0, 10);
         
         TextField tailInputRow5 = new TextField();
         tailInputRow1.setPromptText("Row A-J");
-        GridPane.setConstraints(tailInputRow5, 9, 1);
+        GridPane.setConstraints(tailInputRow5, 1, 10);
         
         TextField tailInputCol5 = new TextField();
         tailInputCol1.setPromptText("Col 1-10");
-        GridPane.setConstraints(tailInputCol5, 9, 2);
+        GridPane.setConstraints(tailInputCol5, 2, 10);
         
         // Place Button
         Button placeButton = new Button("PLACE");
-        GridPane.setConstraints(placeButton, 10, 1);
+        GridPane.setConstraints(placeButton, 2, 11);
         
         //Error Message out of bounds
         Alert alert1 = new Alert(AlertType.ERROR);
@@ -283,115 +284,112 @@ public class InputBoard extends Application {
                                   tailLabel5, tailInputRow5, tailInputCol5,
                                   placeButton);
         
-        Scene scene = new Scene(grid, 300, 200);
-        window.setScene(scene);
+        Scene inputBoardScene = new Scene(grid, 600, 400);
+        primaryStage.setScene(inputBoardScene);
+        primaryStage.show();
         
-        placeButton.setOnAction( new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+        placeButton.setOnAction((ActionEvent e) -> {
+            // setting up size 5 ship
+            myships[0].setLength(5);
+            myships[0].headCoordinate.setXAxis(Integer.parseInt(headInputRow1.getText()));
+            myships[0].headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
+            myships[0].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow1.getText()));
+            myships[0].headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
+            
+            if (checkShipBounds(myships[0]) == false) {
+                inBounds = false;
+            }
+            
+            // setting up size 4 ship
+            myships[1].setLength(4);
+            myships[1].headCoordinate.setXAxis(Integer.parseInt(headInputRow2.getText()));
+            myships[1].headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
+            myships[1].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow2.getText()));
+            myships[1].headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
+            
+            if (checkShipBounds(myships[1]) == false) {
+                inBounds = false;
+            }
+            
+            // setting up size 3 ship
+            myships[2].setLength(3);
+            myships[2].headCoordinate.setXAxis(Integer.parseInt(headInputRow3.getText()));
+            myships[2].headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
+            myships[2].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow3.getText()));
+            myships[2].headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
+            
+            if (checkShipBounds(myships[2]) == false) {
+                inBounds = false;
+            }
+            
+            // setting up size 3 ship
+            myships[3].setLength(3);
+            myships[3].headCoordinate.setXAxis(Integer.parseInt(headInputRow4.getText()));
+            myships[3].headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
+            myships[3].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow4.getText()));
+            myships[3].headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
+            
+            if (checkShipBounds(myships[3]) == false) {
+                inBounds = false;
+            }
+            
+            // setting up size 2 ship
+            myships[4].setLength(2);
+            myships[4].headCoordinate.setXAxis(Integer.parseInt(headInputRow5.getText()));
+            myships[4].headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
+            myships[4].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow5.getText()));
+            myships[4].headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
+            
+            if (checkShipBounds(myships[4]) == false) {
+                inBounds = false;
+            }
+            // is the form missing data
+            if (headInputRow1.getText().isEmpty() == true ||
+                    headInputRow2.getText().isEmpty() == true ||
+                    headInputRow3.getText().isEmpty() == true ||
+                    headInputRow4.getText().isEmpty() == true ||
+                    headInputRow5.getText().isEmpty() == true ||
+                    headInputCol1.getText().isEmpty() == true ||
+                    headInputCol2.getText().isEmpty() == true ||
+                    headInputCol3.getText().isEmpty() == true ||
+                    headInputCol4.getText().isEmpty() == true ||
+                    headInputCol5.getText().isEmpty() == true ||
+                    tailInputRow1.getText().isEmpty() == true ||
+                    tailInputRow2.getText().isEmpty() == true ||
+                    tailInputRow3.getText().isEmpty() == true ||
+                    tailInputRow4.getText().isEmpty() == true ||
+                    tailInputRow5.getText().isEmpty() == true ||
+                    tailInputCol1.getText().isEmpty() == true ||
+                    tailInputCol2.getText().isEmpty() == true ||
+                    tailInputCol3.getText().isEmpty() == true ||
+                    tailInputCol4.getText().isEmpty() == true ||
+                    tailInputCol5.getText().isEmpty() == true) {
+                alert2.setContentText(errorMessageNotComplete);
+                alert2.showAndWait();
+            }
+            
+            //message if error is found
+            if (inBounds == false) {
+                alert1.setContentText(errorMessageOutOfBounds);
+                alert1.showAndWait();
+            }
+            // finish creating the ships
+            fillShip(myships[0]);
+            fillShip(myships[1]);
+            fillShip(myships[2]);
+            fillShip(myships[3]);
+            fillShip(myships[4]);
+            
+            // fill in coordinates to use to fill in the grid
+            fillCoordinates(myships[0]);
+            fillCoordinates(myships[1]);
+            fillCoordinates(myships[2]);
+            fillCoordinates(myships[3]);
+            fillCoordinates(myships[4]);
+            
+            
+            if (inBounds == true && formFilled == true && noIntersect == true) {
                 
-                    // setting up size 5 ship
-                    myships[0].setLength(5);
-                    myships[0].headCoordinate.setXAxis(Integer.parseInt(headInputRow1.getText()));
-                    myships[0].headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
-                    myships[0].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow1.getText()));
-                    myships[0].headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
-                
-                    if (checkShipBounds(myships[0]) == false) {
-                    inBounds = false;
-                }
-                    
-                    // setting up size 4 ship
-                    myships[1].setLength(4);
-                    myships[1].headCoordinate.setXAxis(Integer.parseInt(headInputRow2.getText()));
-                    myships[1].headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
-                    myships[1].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow2.getText()));
-                    myships[1].headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
-                    
-                    if (checkShipBounds(myships[1]) == false) {
-                    inBounds = false;
-                }
-                    
-                    // setting up size 3 ship
-                    myships[2].setLength(3);
-                    myships[2].headCoordinate.setXAxis(Integer.parseInt(headInputRow3.getText()));
-                    myships[2].headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
-                    myships[2].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow3.getText()));
-                    myships[2].headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
-                    
-                    if (checkShipBounds(myships[2]) == false) {
-                    inBounds = false;
-                }
-                    
-                    // setting up size 3 ship
-                    myships[3].setLength(3);
-                    myships[3].headCoordinate.setXAxis(Integer.parseInt(headInputRow4.getText()));
-                    myships[3].headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
-                    myships[3].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow4.getText()));
-                    myships[3].headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
-                    
-                    if (checkShipBounds(myships[3]) == false) {
-                    inBounds = false;
-                }
-                    
-                    // setting up size 2 ship
-                    myships[4].setLength(2);
-                    myships[4].headCoordinate.setXAxis(Integer.parseInt(headInputRow5.getText()));
-                    myships[4].headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
-                    myships[4].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow5.getText()));
-                    myships[4].headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
-                    
-                    if (checkShipBounds(myships[4]) == false) {
-                    inBounds = false;
-                }
-                    // is the form missing data
-                    if (headInputRow1.getText().isEmpty() == true ||
-                        headInputRow2.getText().isEmpty() == true ||
-                        headInputRow3.getText().isEmpty() == true ||
-                        headInputRow4.getText().isEmpty() == true ||
-                        headInputRow5.getText().isEmpty() == true ||
-                        headInputCol1.getText().isEmpty() == true ||
-                        headInputCol2.getText().isEmpty() == true ||    
-                        headInputCol3.getText().isEmpty() == true ||    
-                        headInputCol4.getText().isEmpty() == true ||    
-                        headInputCol5.getText().isEmpty() == true ||    
-                        tailInputRow1.getText().isEmpty() == true ||
-                        tailInputRow2.getText().isEmpty() == true ||
-                        tailInputRow3.getText().isEmpty() == true ||
-                        tailInputRow4.getText().isEmpty() == true ||
-                        tailInputRow5.getText().isEmpty() == true ||
-                        tailInputCol1.getText().isEmpty() == true ||
-                        tailInputCol2.getText().isEmpty() == true ||    
-                        tailInputCol3.getText().isEmpty() == true ||    
-                        tailInputCol4.getText().isEmpty() == true ||    
-                        tailInputCol5.getText().isEmpty() == true) {
-                        alert2.setContentText(errorMessageNotComplete);
-                        alert2.showAndWait();
-                    }
-                    
-                    //message if error is found
-                    if (inBounds == false) {
-                    alert1.setContentText(errorMessageOutOfBounds);
-                    alert1.showAndWait();
-                }
-                    // finish creating the ships
-                    fillShip(myships[0]);
-                    fillShip(myships[1]);
-                    fillShip(myships[2]);
-                    fillShip(myships[3]);
-                    fillShip(myships[4]);
-                    
-                    // fill in coordinates to use to fill in the grid
-                    fillCoordinates(myships[0]);
-                    fillCoordinates(myships[1]);
-                    fillCoordinates(myships[2]);
-                    fillCoordinates(myships[3]);
-                    fillCoordinates(myships[4]);
-                    
-                    
-                    if (inBounds == true && formFilled == true && noIntersect == true) {
-                                            
-                }
-                          
             }
         });
         
