@@ -10,12 +10,16 @@ package battleship;
  * @author matt
  */
 public class Coordinate {
-    int yAxis;
-    int xAxis;
+    public int yAxis;
+    public int xAxis;
    // Coordinate head;
    // Coordinate tail;
     Boolean filled = false;
     
+    public Coordinate() {
+        yAxis = -1;
+        xAxis = -1;
+    }
 
     
     // row

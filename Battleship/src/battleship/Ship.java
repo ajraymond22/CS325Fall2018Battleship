@@ -10,12 +10,12 @@ package battleship;
  * @author matt
  */
 public class Ship {
-    int length;
-    Coordinate headCoordinate;
-    Coordinate tailCoordinate;
-    Coordinate [] body;
-    String orientation;
-    int hitCount = 0;
+    public int length = 0;
+    public Coordinate headCoordinate = new Coordinate();
+    public Coordinate tailCoordinate = new Coordinate();
+    public Coordinate [] body;
+    public String orientation;
+    public int hitCount = 0;
     
 
     

@@ -140,6 +140,11 @@ public class InputBoard {//extends Application {
         grid.setVgap(8);
         grid.setHgap(10);
         
+        //int shipLengths[] = { 5, 4, 3, 3, 2};
+
+        //TextField rowInput[shipLengths.length]
+        //TextField colInput[shipLengths.length]
+        
         // Size 5 ship
         Label headLabel1 = new Label("Head coordinate of Size 5 Ship ");
         GridPane.setConstraints(headLabel1, 0, 0);
@@ -288,58 +293,69 @@ public class InputBoard {//extends Application {
         primaryStage.setScene(inputBoardScene);
         primaryStage.show();
         
+        
         placeButton.setOnAction((ActionEvent e) -> {
             // setting up size 5 ship
-            myships[0].setLength(5);
-            myships[0].headCoordinate.setXAxis(Integer.parseInt(headInputRow1.getText()));
-            myships[0].headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
-            myships[0].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow1.getText()));
-            myships[0].headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
+            Ship ship5 = new Ship();
+            ship5.setLength(5);
+            ship5.headCoordinate.setXAxis((int) (headInputRow1.getText().charAt(0) - 'A'));
+            ship5.headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
+            ship5.tailCoordinate.setXAxis((int) (tailInputRow1.getText().charAt(0) - 'A'));
+            ship5.headCoordinate.setYAxis(Integer.parseInt(headInputCol1.getText()));
+            myships[0] = ship5;
             
             if (checkShipBounds(myships[0]) == false) {
                 inBounds = false;
             }
             
             // setting up size 4 ship
-            myships[1].setLength(4);
-            myships[1].headCoordinate.setXAxis(Integer.parseInt(headInputRow2.getText()));
-            myships[1].headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
-            myships[1].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow2.getText()));
-            myships[1].headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
-            
+            Ship ship4 = new Ship();
+            ship4.setLength(4);
+            ship4.headCoordinate.setXAxis((int) (headInputRow2.getText().charAt(0) - 'A'));
+            ship4.headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
+            ship4.tailCoordinate.setXAxis((int) (tailInputRow2.getText().charAt(0) - 'A'));
+            ship4.headCoordinate.setYAxis(Integer.parseInt(headInputCol2.getText()));
+            myships[1] = ship4;
+                        
             if (checkShipBounds(myships[1]) == false) {
                 inBounds = false;
             }
             
             // setting up size 3 ship
-            myships[2].setLength(3);
-            myships[2].headCoordinate.setXAxis(Integer.parseInt(headInputRow3.getText()));
-            myships[2].headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
-            myships[2].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow3.getText()));
-            myships[2].headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
-            
+            Ship ship3 = new Ship();
+            ship3.setLength(3);
+            ship3.headCoordinate.setXAxis((int) (headInputRow3.getText().charAt(0) - 'A'));
+            ship3.headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
+            ship3.tailCoordinate.setXAxis((int) (tailInputRow3.getText().charAt(0) - 'A'));
+            ship3.headCoordinate.setYAxis(Integer.parseInt(headInputCol3.getText()));
+            myships[2] = ship3;
+                        
             if (checkShipBounds(myships[2]) == false) {
                 inBounds = false;
             }
             
             // setting up size 3 ship
-            myships[3].setLength(3);
-            myships[3].headCoordinate.setXAxis(Integer.parseInt(headInputRow4.getText()));
-            myships[3].headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
-            myships[3].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow4.getText()));
-            myships[3].headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
-            
+            Ship ship2 = new Ship();
+            ship2.setLength(3);
+            ship2.headCoordinate.setXAxis((int) (headInputRow4.getText().charAt(0) - 'A'));
+            ship2.headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
+            ship2.tailCoordinate.setXAxis((int) (tailInputRow4.getText().charAt(0) - 'A'));
+            ship2.headCoordinate.setYAxis(Integer.parseInt(headInputCol4.getText()));
+            myships[3] = ship2;
+                        
             if (checkShipBounds(myships[3]) == false) {
                 inBounds = false;
             }
             
             // setting up size 2 ship
-            myships[4].setLength(2);
-            myships[4].headCoordinate.setXAxis(Integer.parseInt(headInputRow5.getText()));
-            myships[4].headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
-            myships[4].tailCoordinate.setXAxis(Integer.parseInt(tailInputRow5.getText()));
-            myships[4].headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
-            
+            Ship ship1 = new Ship();
+            ship1.setLength(2);
+            ship1.headCoordinate.setXAxis((int) (headInputRow5.getText().charAt(0) - 'A'));
+            ship1.headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
+            ship1.tailCoordinate.setXAxis((int) (tailInputRow5.getText().charAt(0) - 'A'));
+            ship1.headCoordinate.setYAxis(Integer.parseInt(headInputCol5.getText()));
+            myships[4] = ship1;
+                        
             if (checkShipBounds(myships[4]) == false) {
                 inBounds = false;
             }
