@@ -39,7 +39,7 @@ public class GameBoard extends Parent {
 
     private static final Color COLOR_GRIDCELLBORDER = Color.BLACK;
 
-    public static int TURNCOUNT = 0;
+    
     private String whoseBoard = "player";
     private GridPane grid = new GridPane();
 
@@ -100,15 +100,6 @@ public class GameBoard extends Parent {
         return null;
     }
 
-    public static String whoseTurn(){
-        if ((TURNCOUNT % 2) == 0) {
-            return "player";
-        } else {
-            return "enemy";
-        }
-    }
-    
-    
     
     public class Cell extends Rectangle{
 
