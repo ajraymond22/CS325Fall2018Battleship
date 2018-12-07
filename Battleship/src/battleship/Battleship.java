@@ -29,7 +29,7 @@ public class Battleship extends Application {
     public static Ship [] enemyShips = new Ship[5];
     public static int player1Hits = 0;
     public static int player2Hits = 0;
-    static Stage secondaryStage;
+    static Stage secondaryStage = new Stage();
     public static int TURNCOUNT = 0;
     @Override
     public void start(Stage primaryStage) {
@@ -66,8 +66,9 @@ public class Battleship extends Application {
         primaryStage.setTitle("Battleship");
         primaryStage.setScene(scene);
         InputBoard i1 = new InputBoard();
-        i1.displayInputBoard(primaryStage); //throws Exception;
+        i1.displayInputBoard(secondaryStage); //throws Exception;
         primaryStage.show();
+        secondaryStage.show();
     }
     
     public static void detectWin(){
