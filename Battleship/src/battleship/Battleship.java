@@ -30,6 +30,7 @@ public class Battleship extends Application {
     public static int player1Hits = 0;
     public static int player2Hits = 0;
     static Stage secondaryStage;
+    public static int TURNCOUNT = 0;
     @Override
     public void start(Stage primaryStage) {
 
@@ -70,11 +71,26 @@ public class Battleship extends Application {
     }
     
     public static void detectWin(){
-        if (player1Hits == 14) {
-            //POPUP saying "PLAYER 1 WINS!"
+        if (player1Hits == 17) {
+            System.out.println("Player 1 Wins!");
         }
-        else if (player2Hits == 14){
-            //POPUP saying "PLAYER 2 WINS!"
+        else if (player2Hits == 17){
+            System.out.println("Player 2 Wins!");
+        }
+    }
+    public static void displayHits(){
+    if ((TURNCOUNT % 2) == 0) {
+        System.out.println("Player 1 hits: " + player1Hits);
+    } else {
+        System.out.println("Player 2 hits: " + player2Hits);
+        }
+    }
+    
+    public static String whoseTurn(){
+    if ((TURNCOUNT % 2) == 0) {
+        return "player";
+    } else {
+        return "enemy";
         }
     }
 
